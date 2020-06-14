@@ -9,13 +9,15 @@ from collections import Counter
 #    reader = csv.DictReader(data_file)
 #    sepal_length = Counter([row['sepal_length'] for row in reader])
 
+plt.style.use("seaborn")
+
 data  = pd.read_csv('iris.csv')
 sepal_length = Counter(data['sepal_length'])
 
 x, y = zip(*sepal_length.items())
 
 plt.bar(tuple(map(str, x)), y, width = 0.1)
-plt.style.use("seaborn")
+
 
 #plt.tight_layout()
 plt.xlabel('Sepal Length')
